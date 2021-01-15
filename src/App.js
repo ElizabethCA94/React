@@ -1,23 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+function getButtonText(){
+  return 'clickMe!'
+}
+
+//create react component
+const buttonText = 'TextMe!';
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <label class="label" for="name">
+          Enter name:
+        </label>
+        <input id="name"></input>
+  <button style = {{ backgroundColor:'blue', color:'white' }}>{getButtonText()}</button>
     </div>
   );
 }
