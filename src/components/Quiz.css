@@ -1,0 +1,42 @@
+.ss-quiz {
+  margin: 2rem 0;
+}
+
+.ss-user-code {
+    position: relative;
+}
+
+.ss-user-code__function-start {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    background: white;
+    padding: 1rem;
+}
+
+.ss-user-code__textarea {
+    width: 100%;
+    padding: 4rem 3rem;
+}
+
+.ss-user-code__function-end {
+  position: absolute;
+  bottom: 6px;
+  left: 2px;
+  right: 2px;
+  background: white;
+  padding: 1rem;
+}
+
+.ss-quiz__result--success {
+  color: green;
+}
+
+.ss-quiz__result--warning {
+  color: #aa0;
+}
+
+.ss-quiz__result--danger {
+  color: red;
+}
