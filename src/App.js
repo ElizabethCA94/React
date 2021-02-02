@@ -1,5 +1,6 @@
 import './App.css';
 import Quiz from "./components/Quiz";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 /*function getButtonText(){
   return 'clickMe!'
@@ -9,7 +10,12 @@ import Quiz from "./components/Quiz";
 
 const App = () => {
   return (
-    <div>
+    <Router>
+        <Switch>
+          <Route></Route>
+        </Switch>
+    </Router>
+    /*<div>
       <Quiz
         question={'Escribe una función que retorne las palabras "hola mundo"'}
         functionParams={''}
@@ -30,7 +36,7 @@ const App = () => {
         functionParams={'a = 5'}
         result={6}
       ></Quiz>
-    </div>
+    </div>*/
   );
 }
 
