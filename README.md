@@ -6,7 +6,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `npm install`
+
 ### `npm start`
+
+Failed to compile
+
+./src/App.js
+Module not found: Can't resolve 'react-router-dom' in '/home/liz/Documents/React/src'
+
+you can solve with this command:
+### `npm install --save react-router-dom`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.

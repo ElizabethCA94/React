@@ -1,6 +1,7 @@
 import './App.css';
-import Quiz from "./components/Quiz";
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+//import Quiz from "./components/Quiz";
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import routes from './routes'
 
 /*function getButtonText(){
   return 'clickMe!'
@@ -10,11 +11,20 @@ import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 const App = () => {
   return (
-    <Router>
+    <div className="App">
+      <Router>
         <Switch>
-          <Route></Route>
-        </Switch>
-    </Router>
+          {routes.map((route, index) => (
+              <Route 
+              path = {route.path}
+              exact 
+              render = {(props) => <route.component/>}        
+              ></Route>
+          ))}  
+          </Switch>
+      </Router>
+    </div>
+    
     /*<div>
       <Quiz
         question={'Escribe una función que retorne las palabras "hola mundo"'}
