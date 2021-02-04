@@ -5,12 +5,12 @@ import CreateQuizComponent from "../container/CreateQuiz";
 
 const routes = [
     {
-        path: "/register",
+        path: "/auth/register",
         component: RegisterComponent,
         title: "Register"
     },
     {
-        path: "/login",
+        path: "/auth/login",
         component: LoginComponent,
         title: "Login"
     },
@@ -20,7 +20,7 @@ const routes = [
         title: "Quiz"
     },
     {
-        path: "/createQuiz",
+        path: "/auth/createQuiz",
         component: CreateQuizComponent,
         title: "CreateQuiz"
     }

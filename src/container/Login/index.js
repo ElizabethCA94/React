@@ -5,7 +5,7 @@ const LoginContainer = () => {
     return (
         <div>
           <h1>Login</h1>
-          <Link to="/register">Register Here</Link>
+          <Link to="/auth/register">Register Here</Link>
         </div>
       ); 
 };
