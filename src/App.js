@@ -3,6 +3,7 @@ import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import routes from './routes';
 import 'semantic-ui-css/semantic.min.css';
+import GlobalProvider from './context/Provider';
 
 /*function getButtonText(){
   return 'clickMe!'
@@ -13,17 +14,19 @@ import 'semantic-ui-css/semantic.min.css';
 const App = () => {
   return (
     <div className="App">
-      <Router>
-        <Switch>
-          {routes.map((route, index) => (
-              <Route 
-              path = {route.path}
-              exact 
-              render = {(props) => <route.component/>}        
-              ></Route>
-          ))}  
-          </Switch>
-      </Router>
+      <GlobalProvider>
+        <Router>
+          <Switch>
+            {routes.map((route, index) => (
+                <Route 
+                path = {route.path}
+                exact 
+                render = {(props) => <route.component/>}        
+                ></Route>
+            ))}  
+            </Switch>
+        </Router>
+      </GlobalProvider> 
     </div>
     
     /*<div>

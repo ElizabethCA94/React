@@ -20,7 +20,7 @@ const routes = [
         title: "Quiz"
     },
     {
-        path: "/auth/createQuiz",
+        path: "/quiz/create",
         component: CreateQuizComponent,
         title: "CreateQuiz"
     }
