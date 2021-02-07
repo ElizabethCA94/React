@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import {Form, Button} from '../layout/Register/node_modules/semantic-ui-react';
+import {Form, Button} from 'semantic-ui-react';
 const Register = () => {
   const [datos, setDatos] = useState  ({
     correo: '',

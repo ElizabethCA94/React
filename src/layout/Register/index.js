@@ -1,26 +1,27 @@
 import React from 'react';
+import {Form, Button} from 'semantic-ui-react';
+import Header from '../../components/Header';
 
 const RegisterUI = () => {
     return (
         <div class="ui form">
+          <Header></Header>
           <h1>Formulario de Registro</h1>
-          <div class="fields">
-            <div class="field">
+          <Form>
+            <Form.Field>
               <div class="ui form success">
                 <div class="field">
                 <label>E-mail</label>
                 <input type="email" placeholder="joe@schmoe.com"/>
                 </div>
               </div>
-            </div>
-            <div class="field">
+            </Form.Field>
+            <Form.Field>
               <label>Password</label>
-              <input type="password" onChange = {handleInputChange}/>
-            </div>
-            <div class="field">
-              <div class="ui submit button">Submit</div>
-            </div>
-          </div>
+              <input type="password" placeholder="****"/>
+            </Form.Field>
+            <Button type="ui submit button">Submit</Button>
+          </Form>
         </div>
       ); 
 };

@@ -16,7 +16,7 @@ const Header = () => {
             </Menu.Item>
             <Menu.Item>
                     {""}
-                <Button color="red" basic icon>
+                <Button as = { Link } to = {"/auth/login"}  color="red" basic icon>
                     <Icon name = "log out"></Icon>
                     Logout
                 </Button>

@@ -3,7 +3,7 @@ import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import routes from './routes';
 import 'semantic-ui-css/semantic.min.css';
-import GlobalProvider from './context/Provider';
+import { GlobalProvider } from './context/Provider';
 
 /*function getButtonText(){
   return 'clickMe!'
