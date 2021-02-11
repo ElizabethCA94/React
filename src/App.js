@@ -50,7 +50,7 @@ const App = () => {
         functionParams={'a = 5'}
         result={6}
       ></Quiz>
-    </div>**/
+    </div>*/
   );
 }
 
