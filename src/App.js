@@ -1,10 +1,10 @@
 import './App.css';
 //import Quiz from "./components/Quiz";
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import routes from './routes';
 import 'semantic-ui-css/semantic.min.css';
 import { GlobalProvider } from './context/Provider';
-
+import Header from './components/Header';
 /*function getButtonText(){
   return 'clickMe!'
 }*/
@@ -16,19 +16,20 @@ const App = () => {
     <div className="App">
       <GlobalProvider>
         <Router>
+          <Header></Header>
           <Switch>
             {routes.map((route, index) => (
-                <Route 
-                path = {route.path}
-                exact 
-                render = {(props) => <route.component/>}        
-                ></Route>
-            ))}  
-            </Switch>
+              <Route
+                path={route.path}
+                exact
+                render={(props) => <route.component />}
+              ></Route>
+            ))}
+          </Switch>
         </Router>
-      </GlobalProvider> 
+      </GlobalProvider>
     </div>
-    
+
     /*<div>
       <Quiz
         question={'Escribe una función que retorne las palabras "hola mundo"'}

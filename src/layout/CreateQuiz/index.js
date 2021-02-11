@@ -23,7 +23,7 @@ const CreateQuizUI = () => {
   }
 
   const handleUserIdChange = (e) => {
-    setuserId(e.target.value)
+    //setuserId(e.target.value)
   }
   
   const onSubmit = async () => {
