@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import './Quiz.css';
+import './index.css';
+import { Form, Button } from 'semantic-ui-react';
 
-export default function Quiz(props) {
+export default function QuizUI (props) {
   const [userCode, setUserCode] = useState('return');
   const [result, setResult] = useState('');
   const [status, setStatus] = useState(null);
@@ -24,34 +25,49 @@ export default function Quiz(props) {
   }
 
   return (
-    <div class="ss-quiz">
-      <div>
-        <b>Pregunta </b>
-        <span>{props.question}</span>
+    <div class="ui form">
+      <h1>Quiz</h1>
+      <div class="lf-quiz-form">
+        <Form>
+          <Form.Field>
+            <div class="ui form success">
+              <div class="field">
+                <b>Pregunta </b>
+                <span>{props.question}</span>
+              </div>
+            </div>
+          </Form.Field>
+          <Form.Field>
+            <div class="ui form success">
+              <div class="field">
+                <b>Parámetros de la función </b>
+                <span>{props.functionParams}</span>
+              </div>
+            </div>
+          </Form.Field>
+          <Form.Field>
+            <div class="ui form success">
+              <div class="field">
+                <b>Resultado esperado </b>
+                <span>{props.result}</span>
+              </div>
+            </div>
+          </Form.Field>
+          <Form.Field>
+            <div class="lf-user-code">
+              <div class="lf-user-code__function-start"> function miFuncion({props.functionParams}) {'{'}</div>
+              <textarea class="lf-user-code__textarea" rows={'8'} cols={'90'} value={userCode} onChange={onUserCodeChange}></textarea>
+              <div class="lf-user-code__function-end">{'}'}</div>
+            </div>
+          </Form.Field>
+          <Button onClick={onCheckCodeButtonClick} type="ui submit button">Verificar mi Código</Button>
+          <div>
+            <b className={`lf-quiz__result--${status}`}>
+              {result}
+            </b>
+          </div>
+        </Form>
       </div>
-      <div>
-        <b>Parámetros de la función </b>
-        <span>{props.functionParams}</span>
-      </div>
-      <div>
-        <b>Resultado esperado </b>
-        <span>{props.result}</span>
-      </div>
-
-      <div class="ss-user-code">
-        <div class="ss-user-code__function-start"> function miFuncion({props.functionParams}) {'{'}</div>
-        <textarea class="ss-user-code__textarea" rows={'8'} cols={'90'} value={userCode} onChange={onUserCodeChange}></textarea>
-        <div class="ss-user-code__function-end">{'}'}</div>
-      </div>
-
-      <button onClick={onCheckCodeButtonClick}>Verificar mi Código</button>
-      <div>
-        <b className={`ss-quiz__result--${status}` }>
-          {result}
-        </b>
-      </div>
-
     </div>
   )
 }
-

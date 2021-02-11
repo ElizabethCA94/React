@@ -1,15 +1,15 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 //import {Link} from 'react-router-dom';
 //import {register} from '../../context/actions/auth/Register';
 import RegisterUI from '../../layout/Register';
+import Header from '../../components/Header';
+
 
 const RegisterContainer = () => {
-    /*useEffect(() =>
-      {register();},
-    );*/
 
     return (
       <div>
+        <Header></Header>
         <RegisterUI></RegisterUI>
       </div>
       ); 

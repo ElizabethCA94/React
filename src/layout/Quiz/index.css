@@ -1,12 +1,13 @@
-.ss-quiz {
-  margin: 2rem 0;
+.lf-register-form {
+    max-width: 6000px;
+    margin: 0 40px;
 }
 
-.ss-user-code {
+.lf-user-code {
     position: relative;
 }
 
-.ss-user-code__function-start {
+.lf-user-code__function-start {
     position: absolute;
     top: 2px;
     left: 2px;
@@ -15,12 +16,12 @@
     padding: 1rem;
 }
 
-.ss-user-code__textarea {
+.lf-user-code__textarea {
     width: 100%;
     padding: 4rem 3rem;
 }
 
-.ss-user-code__function-end {
+.lf-user-code__function-end {
   position: absolute;
   bottom: 6px;
   left: 2px;
@@ -29,14 +30,14 @@
   padding: 1rem;
 }
 
-.ss-quiz__result--success {
+.lf-quiz__result--success {
   color: green;
 }
 
-.ss-quiz__result--warning {
+.lf-quiz__result--warning {
   color: #aa0;
 }
 
-.ss-quiz__result--danger {
+.lf-quiz__result--danger {
   color: red;
 }

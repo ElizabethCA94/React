@@ -1,11 +1,12 @@
 import React from 'react';
 import Header from '../../components/Header';
+import CreateQuizUI from '../../layout/CreateQuiz';
 
 const CreateQuizContainer = () => {
     return (
         <div>
           <Header></Header>
-          <h1>Create Quiz</h1>
+          <CreateQuizUI></CreateQuizUI>
         </div>
       ); 
 };
