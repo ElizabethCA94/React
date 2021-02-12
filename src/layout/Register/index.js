@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Form, Button , Modal} from 'semantic-ui-react';
+import { Form, Button} from 'semantic-ui-react';
 import './index.css';
+
 
 
 const RegisterUI = () => {
