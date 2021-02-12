@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Form, Button } from 'semantic-ui-react';
+import Context from "../../store/context";
 //import './index.css';
 
 
 const CreateQuizUI = () => {
+  const { state } = useContext(Context); // global variable
   
   const [description, setdescription] = useState('');
-  const [fuctionParams, setfuctionParams] = useState('');
+  const [functionParams, setfuctionParams] = useState('');
   const [expectedOutput, setexpectedOutput] = useState('');
-  const userId = 'c6bc9589-36c6-4c7c-943d-5d6936a1edaa';
 
   const handleDescriptionChange = (e) => {
     setdescription(e.target.value)
@@ -27,9 +28,9 @@ const CreateQuizUI = () => {
       method: 'post',
       body: JSON.stringify({
         description,
-        fuctionParams,
+        functionParams,
         expectedOutput,
-        userId
+        userSecretId: state.secretId
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -54,8 +55,8 @@ const CreateQuizUI = () => {
             </div>
           </Form.Field>
           <Form.Field>
-            <label>Cantidad de parámetros</label>
-            <input value = {fuctionParams} onChange = {handleFuctionParamsChange} type="form-input-control-opinion" />
+            <label>Parámetros de la función</label>
+            <input value = {functionParams} onChange = {handleFuctionParamsChange} type="form-input-control-opinion" />
           </Form.Field>
           <Form.Field>
             <label>Respuesta esperada</label>
