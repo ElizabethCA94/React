@@ -1,17 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import useGlobalState from "./store/useGlobalState";
+import Context from "./store/context";
 
+const Index = () => {
+  const store = useGlobalState();
+  return (
+    <Context.Provider value={store}>
+      <App />
+    </Context.Provider>
+  );
+};
 
 ReactDOM.render(
   //<React.StrictMode>
-    <App />,
+  <Index />,
   //</React.StrictMode>,
-  document.querySelector('#root')
+  document.querySelector("#root")
 );
-
 
 //Take de react component and show it on the screen
 /*ReactDOM.render(
