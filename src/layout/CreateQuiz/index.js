@@ -8,7 +8,7 @@ const CreateQuizUI = () => {
   const [description, setdescription] = useState('');
   const [fuctionParams, setfuctionParams] = useState('');
   const [expectedOutput, setexpectedOutput] = useState('');
-  const userId = '';
+  const userId = 'c6bc9589-36c6-4c7c-943d-5d6936a1edaa';
 
   const handleDescriptionChange = (e) => {
     setdescription(e.target.value)
@@ -20,10 +20,6 @@ const CreateQuizUI = () => {
 
   const handleExpectedOutputChange = (e) => {
     setexpectedOutput(e.target.value)
-  }
-
-  const handleUserIdChange = (e) => {
-    //setuserId(e.target.value)
   }
   
   const onSubmit = async () => {

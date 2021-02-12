@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Button } from 'semantic-ui-react';
+import { Form, Button , Modal} from 'semantic-ui-react';
 import './index.css';
 
 
@@ -13,9 +13,9 @@ const RegisterUI = () => {
   const handlePasswordChange = (e) => {
     setPassword(e.target.value)
   }
-  
+
   const onSubmit = async () => {
-    await fetch('http://localhost:4000/dev/registerUser', {
+    const response = await fetch('http://localhost:4000/dev/registerUser', {
       method: 'post',
       body: JSON.stringify({
         email,
@@ -26,13 +26,25 @@ const RegisterUI = () => {
       }
     }).then(response => response.json())
       .then(data => data)
-      .catch(e => console.log(e))
+      .catch(e => {
+        console.log(e.message)
+      })
+
+    if (!response.message) {
+      console.log(response);
+      alert('Usuario registrado existosamente')
+    }
+    else {
+      console.log(response);
+      alert('Usuario no registrado')
+    }
 
   }
 
   return (
-    <div class="lf-register-form">
+    <div class="ui form">
       <h1>Registrarse</h1>
+      <div class="lf-register-form">
         <Form onSubmit={onSubmit}>
           <Form.Field>
             <div class="ui form success">
@@ -43,11 +55,16 @@ const RegisterUI = () => {
             </div>
           </Form.Field>
           <Form.Field>
-            <label>Password</label>
-            <input onChange={handlePasswordChange} value={password} type="password" placeholder="****" />
+            <div class="ui form success">
+              <div class="field">
+                <label>Password</label>
+                <input value={password} onChange={handlePasswordChange} type="password" placeholder="****" />
+              </div>
+            </div>
           </Form.Field>
           <Button type="ui submit button">Submit</Button>
         </Form>
+      </div>
     </div>
   );
 };
