@@ -32,9 +32,25 @@ const Header = () => {
       </Menu.Item>
       <Menu.Item>
         {!state.secretId && (
-          <Button as={Link} to={"/auth/login"} color="red" basic icon>
-            <Icon name="log out"></Icon>
+          <Button as={Link} to={"/auth/login"} color="green" basic icon>
+            <Icon name="sign in"></Icon>
             Login
+          </Button>
+        )}
+      </Menu.Item>
+      <Menu.Item>
+        {!state.secretId && (
+          <Button as={Link} to={"/auth/register"} color="blue" basic icon>
+            <Icon name="sign sign in alternate"></Icon>
+            Register
+          </Button>
+        )}
+      </Menu.Item>
+      <Menu.Item>
+        {state.secretId && (
+          <Button as={Link} to={"/quiz/create"} color="red" basic icon>
+            <Icon name="log out"></Icon>
+            Log out
           </Button>
         )}
       </Menu.Item>
