@@ -39,7 +39,6 @@ const LoginUI = () => {
   return (
     <div class="lf-register-form">
       <h1>Login</h1>
-      {state.secretId}
       <Form onSubmit={onSubmit}>
         <Form.Field>
           <div class="ui form success">
