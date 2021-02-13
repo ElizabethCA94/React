@@ -1,48 +1,40 @@
-import React, { useContext, setState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { List } from 'semantic-ui-react';
 import Context from "../../store/context";
 
 const Profile = () => {
   const { state } = useContext(Context);
-  let quizes = [];
+  const [quizes, setQuizes] = useState([]);
 
-  // const quizesResponse = await fetch("http://localhost:4000/dev/listQuiz", {
-  //   method: "post",
-  //   body: JSON.stringify({
-  //     secretId: state.secretId
-  //   }),
-  // })
-  //   .then((response) => response.json())
-  //   .then((data) => data)
-  //   .catch((e) => console.log(e));
-
-  // if (quizesResponse.length) {
-  //   quizes = quizesResponse;
-  // }
+  if (!quizes.length) {
+    const quizesResponse = fetch("http://localhost:4000/dev/listQuiz", {
+      method: "post",
+      body: JSON.stringify({
+        secretId: state.secretId
+      }),
+    })
+      .then((response) => response.json())
+      .then((quizesResponse) => {
+        if (quizesResponse?.length) {
+          setQuizes(quizesResponse);
+          console.log(quizes)
+        }
+      })
+      .catch((e) => console.log(e));
+  }
 
   return (
     <List divided relaxed>
-      <List.Item>
-        <List.Icon name='file alternate outline' size='large' verticalAlign='middle' />
-        <List.Content>
-          <List.Header as='a'>Semantic-Org/Semantic-UI</List.Header>
-          <List.Description as='a'>Updated 10 mins ago</List.Description>
-        </List.Content>
-      </List.Item>
-      <List.Item>
-        <List.Icon name='file alternate outline' size='large' verticalAlign='middle' />
-        <List.Content>
-          <List.Header as='a'>Semantic-Org/Semantic-UI-Docs</List.Header>
-          <List.Description as='a'>Updated 22 mins ago</List.Description>
-        </List.Content>
-      </List.Item>
-      <List.Item>
-        <List.Icon name='file alternate outline' size='large' verticalAlign='middle' />
-        <List.Content>
-          <List.Header as='a'>Semantic-Org/Semantic-UI-Meteor</List.Header>
-          <List.Description as='a'>Updated 34 mins ago</List.Description>
-        </List.Content>
-      </List.Item>
+      {quizes.map((quiz) => (
+        <List.Item>
+          <List.Icon name='file alternate outline' size='large' verticalAlign='middle' />
+          <List.Content>
+            <List.Header as='a'>{quiz.description}</List.Header>
+            <List.Description as='a'>{quiz.functionParams}</List.Description>
+            <List.Description as='a'>{quiz.expectedOutput}</List.Description>
+          </List.Content>
+        </List.Item>
+      ))}
     </List>
   )
 }
