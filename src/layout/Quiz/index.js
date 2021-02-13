@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import './index.css';
 import { Form, Button } from 'semantic-ui-react';
+import { useParams } from "react-router-dom";
 
 export default function QuizUI (props) {
+  let { id } = useParams();
+
   const [userCode, setUserCode] = useState('return');
   const [result, setResult] = useState('');
   const [status, setStatus] = useState(null);
@@ -27,6 +30,7 @@ export default function QuizUI (props) {
   return (
     <div class="ui form">
       <h1>Quiz</h1>
+      { id }
       <div class="lf-quiz-form">
         <Form>
           <Form.Field>
