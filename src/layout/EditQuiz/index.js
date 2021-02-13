@@ -4,7 +4,7 @@ import Context from "../../store/context";
 //import './index.css';
 
 
-const CreateQuizUI = () => {
+const EditQuizUI = () => {
   const { state } = useContext(Context); // global variable
   
   const [description, setdescription] = useState('');
@@ -79,4 +79,4 @@ const CreateQuizUI = () => {
   );
 };
 
-export default CreateQuizUI;
+export default EditQuizUI;
