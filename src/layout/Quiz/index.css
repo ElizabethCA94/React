@@ -1,24 +1,25 @@
 .lf-register-form {
-    max-width: 6000px;
-    margin: 0 40px;
+  max-width: 6000px;
+  margin: 0 40px;
 }
 
 .lf-user-code {
-    position: relative;
+  position: relative;
+  text-align: left;
 }
 
 .lf-user-code__function-start {
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    right: 2px;
-    background: white;
-    padding: 1rem;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  background: white;
+  padding: 1rem;
 }
 
 .lf-user-code__textarea {
-    width: 100%;
-    padding: 4rem 3rem;
+  width: 100%;
+  padding: 4rem 3rem;
 }
 
 .lf-user-code__function-end {
