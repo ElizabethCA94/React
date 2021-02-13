@@ -78,13 +78,14 @@ const Header = () => {
         </Menu.Item>
 
       </Menu>
-      <Form>
+      <br></br>
+      {/* <Form>
         {<Grid.Column>
           {state.secretId && (
             <Link to="/quiz/create"><div><h4>Bienvenido, dando clic sobre este texto o seleccionando el boton "create quiz" puedes crear un quiz para tus estudiantes para apender funciones</h4></div></Link>
           )}
         </Grid.Column>}
-      </Form>
+      </Form> */}
     </div>
 
   );
