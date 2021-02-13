@@ -43,30 +43,30 @@ const RegisterUI = () => {
   }
 
   return (
-    <div class="ui form">
+    <div class="lf-register-form">
       <h1>Registrarse</h1>
-      <div class="lf-register-form">
         <Form onSubmit={onSubmit}>
           <Form.Field>
             <div class="ui form success">
               <div class="field">
                 <label>E-mail</label>
-                <input value={email} onChange={handleEmailChange} type="email" placeholder="joe@schmoe.com" />
+                <input value={email} 
+                onChange={handleEmailChange} 
+                type="email" 
+                placeholder="joe@schmoe.com" />
               </div>
             </div>
           </Form.Field>
           <Form.Field>
-            <div class="ui form success">
-              <div class="field">
                 <label>Password</label>
-                <input value={password} onChange={handlePasswordChange} type="password" placeholder="****" />
-              </div>
-            </div>
+                <input value={password} 
+                onChange={handlePasswordChange} 
+                type="password" 
+                placeholder="****" />
           </Form.Field>
-          <Button type="ui submit button">Submit</Button>
+          <Button type="ui submit button">Registrarse</Button>
         </Form>
       </div>
-    </div>
   );
 };
 

@@ -62,7 +62,7 @@ const LoginUI = () => {
             placeholder="****"
           />
         </Form.Field>
-        <Button type="ui submit button">Submit</Button>
+        <Button type="ui submit button">Iniciar sesión </Button>
       </Form>
     </div>
   );
