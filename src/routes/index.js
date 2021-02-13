@@ -2,6 +2,7 @@ import RegisterComponent from "../container/Register";
 import LoginComponent from "../container/Login";
 import QuizComponent from "../container/Quiz";
 import CreateQuizComponent from "../container/CreateQuiz";
+import EditQuizComponent from "../container/EditQuiz";
 
 const routes = [
     {
@@ -23,6 +24,11 @@ const routes = [
         path: "/quiz/create",
         component: CreateQuizComponent,
         title: "CreateQuiz"
+    },
+    {
+        path: "/quiz/edit",
+        component: EditQuizComponent,
+        title: "EditQuiz"
     }
 
 ]
