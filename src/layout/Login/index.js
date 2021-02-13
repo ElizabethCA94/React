@@ -31,7 +31,7 @@ const LoginUI = () => {
     if (loginResponse?.secretId) {
       actions({
         type: "setState",
-        payload: { ...state, secretId: loginResponse.secretId },
+        payload: { ...state, secretId: loginResponse.secretId, userId: loginResponse.id },
       })
     }
   };

@@ -3,6 +3,7 @@ import { useState } from "react";
 const useGlobalState = () => {
   const [state, setState] = useState({
     secretId: null,
+    userId: null,
     activeQuizId: null,
     activeQuizDescription: null,
     activeQuizFunctionParams: null,
