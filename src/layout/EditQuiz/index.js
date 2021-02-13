@@ -7,9 +7,9 @@ import Context from "../../store/context";
 const EditQuizUI = () => {
   const { state } = useContext(Context); // global variable
   
-  const [description, setdescription] = useState('');
-  const [functionParams, setfuctionParams] = useState('');
-  const [expectedOutput, setexpectedOutput] = useState('');
+  const [description, setdescription] = useState(state.activeQuizDescription);
+  const [functionParams, setfuctionParams] = useState(state.activeQuizFunctionParams);
+  const [expectedOutput, setexpectedOutput] = useState(state.activeQuizExpectedOutput);
 
   const handleDescriptionChange = (e) => {
     setdescription(e.target.value)
@@ -43,7 +43,7 @@ const EditQuizUI = () => {
 
   return (
     <div class="ui form">
-      <h1>Crear Quiz</h1>
+      <h1>Editar Quiz</h1>
       <div class="lf-register-form">
         <Form onSubmit = {onSubmit}>
           <Form.Field>

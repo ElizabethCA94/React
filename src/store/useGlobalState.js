@@ -1,7 +1,13 @@
 import { useState } from "react";
 
 const useGlobalState = () => {
-  const [state, setState] = useState({ secretId: null, activeQuiz: null });
+  const [state, setState] = useState({
+    secretId: null,
+    activeQuizId: null,
+    activeQuizDescription: null,
+    activeQuizFunctionParams: null,
+    activeQuizExpectedOutput: null,
+  });
 
   const actions = (action) => {
     const { type, payload } = action;

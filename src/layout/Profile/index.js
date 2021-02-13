@@ -39,15 +39,23 @@ const Profile = () => {
 
   return (
     <List divided relaxed>
-      jazz
-      {state.activeQuiz}
+      {state.activeQuizId}
       {quizes.map((quiz) => (
-        <div to="/quiz/edit" onClick={() => {
-          actions({
-            type: "setActiveQuiz",
-            payload: { ...state, activeQuiz: quiz },
-          });
-        }}>
+        <Link
+          to="/quiz/edit"
+          onClick={() => {
+            actions({
+              type: "setActiveQuiz",
+              payload: {
+                ...state,
+                activeQuizId: quiz.id,
+                activeQuizDescription: quiz.description,
+                activeQuizFunctionParams: quiz.functionParams,
+                activeQuizExpectedOutput: quiz.expectedOutput,
+              },
+            });
+          }}
+        >
           <List.Item>
             <List.Icon
               name="file alternate outline"
@@ -60,7 +68,7 @@ const Profile = () => {
               <List.Description as="a">{quiz.expectedOutput}</List.Description>
             </List.Content>
           </List.Item>
-        </div>
+        </Link>
       ))}
     </List>
   );
