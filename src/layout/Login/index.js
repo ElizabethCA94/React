@@ -28,11 +28,11 @@ const LoginUI = () => {
       .then((data) => data)
       .catch((e) => console.log(e));
 
-    if (loginResponse.secretId) {
+    if (loginResponse?.secretId) {
       actions({
         type: "setState",
         payload: { ...state, secretId: loginResponse.secretId },
-      });
+      })
     }
   };
 

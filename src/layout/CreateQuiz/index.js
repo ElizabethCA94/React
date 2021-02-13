@@ -50,17 +50,27 @@ const CreateQuizUI = () => {
             <div class="ui form success">
               <div class="field">
                 <label>Enunciado</label>
-                <textarea value = {description} onChange = {handleDescriptionChange} type="form-textarea-control-opinion"/>
+                <textarea value = {description} 
+                onChange = {handleDescriptionChange} 
+                type="form-textarea-control-opinion"
+                placeholder="Escribe una función que retorne un 6 (a + b)"/>
               </div>
             </div>
           </Form.Field>
           <Form.Field>
             <label>Parámetros de la función</label>
-            <input value = {functionParams} onChange = {handleFuctionParamsChange} type="form-input-control-opinion" />
+            <input value = {functionParams} 
+            onChange = {handleFuctionParamsChange} 
+            type="form-input-control-opinion" 
+            placeholder= "a = 5, b = 1"/>
           </Form.Field>
           <Form.Field>
             <label>Respuesta esperada</label>
-            <input value = {expectedOutput} onChange = {handleExpectedOutputChange} type="form-input-control-opinion" />
+            <input value = {expectedOutput} 
+            onChange = {handleExpectedOutputChange} 
+            type="form-input-control-opinion" 
+            placeholder= "6"
+            />
           </Form.Field>
           <Button type="ui submit button">Submit</Button>
         </Form>
