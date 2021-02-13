@@ -43,8 +43,8 @@ const Profile = () => {
         tus quizzes
       </div>
       <Link
-        to={`/quiz/${state.userId}`}
-      >{`http://localhost:3000/quiz/${state.userId}`}</Link>
+        to={`/quizzes/${state.userId}`}
+      >{`http://localhost:3000/quizzes/${state.userId}`}</Link>
       <hr></hr>
       <List divided relaxed>
         {state.activeQuizId}
