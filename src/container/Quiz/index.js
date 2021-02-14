@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import QuizUI from "../../layout/Quiz";
-import "./quizzesPage.css";
+import "./index.css";
 import { useParams } from "react-router-dom";
 
 export default function ({ props }) {
